@@ -22,7 +22,10 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "remark": "^15.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",
