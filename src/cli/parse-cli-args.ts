@@ -1,11 +1,13 @@
+import type { Platform } from '../types/transform.js';
+
 export type OutputMode = 'separate' | 'in-place';
 
 export type ParsedCliArgs = {
-  from: string;
+  from: Platform;
+  to: Platform;
   inputPaths: string[];
-  outputMode: OutputMode;
   outDir: string;
-  to: string;
+  outputMode: OutputMode;
 };
 
 export function parseCliArgs(argv: string[]): ParsedCliArgs {
@@ -53,10 +55,10 @@ export function parseCliArgs(argv: string[]): ParsedCliArgs {
   }
 
   return {
-    from,
+    from: from as Platform,
+    to: to as Platform,
     inputPaths,
-    outputMode,
     outDir,
-    to,
+    outputMode,
   };
 }

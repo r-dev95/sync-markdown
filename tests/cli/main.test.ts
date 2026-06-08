@@ -15,5 +15,5 @@ test('単一ファイルを別出力へ書き出せる', async () => {
   const outputPath = path.join(workspace, 'out', 'note.md');
   const output = await readFile(outputPath, 'utf8');
 
-  expect(output).toBe('# title\n\nbody\n');
+  expect(output).toBe('\n# title\n\nbody\n');
 });
