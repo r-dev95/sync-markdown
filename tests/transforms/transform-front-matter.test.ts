@@ -1,16 +1,18 @@
+import matter from 'gray-matter';
 import { expect, test } from 'vitest';
-import { transformFrontMatter } from '../../src/transforms/transform-front-matter.js';
+
+import transformFrontMatter from '../../src/transforms/transform-front-matter.js';
 
 test('変換元と変換先のプラットフォーム指定が同じでエラーが投げられる', () => {
-  expect(() => transformFrontMatter('', 'zenn', 'zenn')).toThrow(EvalError);
+  expect(() => transformFrontMatter({}, { from: 'zenn', to: 'zenn' })).toThrow(EvalError);
 });
 
 test('変換範囲外のプラットフォーム指定で変換元のフロントマターがそのまま返される', () => {
-  const source = `---
+  const source = matter(`---
 title: 記事のタイトル
 url: https://examle.com
----`;
-  expect(transformFrontMatter(source, 'gfm', 'zenn')).toBe(source);
+---`).data;
+  expect(transformFrontMatter(source, { from: 'gfm', to: 'zenn' })).toBe(source);
 });
 
 test.each([
@@ -73,7 +75,8 @@ ignorePublish: false
 ---`,
   },
 ])('%#. フロントマター変換 (Zenn -> Qiita) - $msg', ({ source, expected }) => {
-  expect(transformFrontMatter(source, 'zenn', 'qiita')).toBe(expected);
+  const transformedData = transformFrontMatter(matter(source).data, { from: 'zenn', to: 'qiita' });
+  expect(matter.stringify('', transformedData).trimEnd()).toBe(expected);
 });
 
 test.each([
@@ -133,5 +136,6 @@ published: true
 ---`,
   },
 ])('%#. フロントマター変換 (Qiita -> Zenn) - $msg', ({ source, expected }) => {
-  expect(transformFrontMatter(source, 'qiita', 'zenn')).toBe(expected);
+  const transformedData = transformFrontMatter(matter(source).data, { from: 'qiita', to: 'zenn' });
+  expect(matter.stringify('', transformedData).trimEnd()).toBe(expected);
 });
