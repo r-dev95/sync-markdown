@@ -173,7 +173,7 @@ function zennToGfm() {
       textNode.value = textNode.value
         .replace(/^(:{3,})\s*message alert\s*$/gm, (_, colon: string) => {
           tagStack.push({ index, colon });
-          return `[!WARNING]`;
+          return `[!CAUTION]`;
         })
         .replace(/^(:{3,})\s*message\s*$/gm, (_, colon: string) => {
           tagStack.push({ index, colon });
