@@ -1,7 +1,7 @@
 import type { Html, Paragraph, Parent, Root, Text } from 'mdast';
 import type { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
-import { PluginOptions } from '../../types/transform.js';
+import { PluginOptions } from '../../types/index.js';
 
 // <details>, <summary>, </summary>間のいずれかに空白行がある場合はだめ
 function gfmToZenn() {

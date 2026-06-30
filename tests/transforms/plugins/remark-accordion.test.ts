@@ -6,7 +6,7 @@ import { unified } from 'unified';
 import { expect, test } from 'vitest';
 
 import remarkAccordion from '../../../src/transforms/plugins/remark-accordion.js';
-import type { Platform } from '../../../src/types/transform.js';
+import type { Platform } from '../../../src/types/index.js';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const remarkSrtingifyOptions: any = {

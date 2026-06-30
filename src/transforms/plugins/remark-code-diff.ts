@@ -1,7 +1,7 @@
 import type { Code, Parent, Root } from 'mdast';
 import type { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
-import { PluginOptions } from '../../types/transform.js';
+import { PluginOptions } from '../../types/index.js';
 
 function gfmToQiita() {
   return (tree: Root) => {

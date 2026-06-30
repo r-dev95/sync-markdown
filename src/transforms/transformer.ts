@@ -1,6 +1,6 @@
 import matter from 'gray-matter';
 
-import type { FrontMatterData, PluginOptions } from '../types/transform.js';
+import type { FrontMatterData, PluginOptions } from '../types/index.js';
 import transformBody from './transform-body.js';
 import transformFrontMatter from './transform-front-matter.js';
 

@@ -2,7 +2,7 @@ import type { Code, Paragraph, Parent, Root } from 'mdast';
 import type { InlineMath, Math } from 'mdast-util-math';
 import type { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
-import { PluginOptions } from '../../types/transform.js';
+import { PluginOptions } from '../../types/index.js';
 
 function gfmToZenn() {
   return (tree: Root) => {

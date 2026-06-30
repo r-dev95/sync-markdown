@@ -1,4 +1,4 @@
-import { FrontMatterData, PluginOptions } from '../types/transform.js';
+import { FrontMatterData, PluginOptions } from '../types/index.js';
 
 export default function transformFrontMatter(
   source: FrontMatterData,

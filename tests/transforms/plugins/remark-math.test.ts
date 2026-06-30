@@ -6,7 +6,7 @@ import remarkStringify from 'remark-stringify';
 import { unified } from 'unified';
 import { expect, test } from 'vitest';
 import remarkMathPlugin from '../../../src/transforms/plugins/remark-math.js';
-import type { Platform } from '../../../src/types/transform.js';
+import type { Platform } from '../../../src/types/index.js';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const remarkSrtingifyOptions: any = {

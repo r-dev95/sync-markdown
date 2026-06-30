@@ -4,7 +4,7 @@ import remarkParse from 'remark-parse';
 import remarkStringify from 'remark-stringify';
 import { unified } from 'unified';
 
-import type { PluginOptions } from '../types/transform.js';
+import type { PluginOptions } from '../types/index.js';
 import remarkAccordion from './plugins/remark-accordion.js';
 import remarkAlert from './plugins/remark-alert.js';
 import remarkCodeDiff from './plugins/remark-code-diff.js';

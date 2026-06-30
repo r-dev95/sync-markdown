@@ -1,7 +1,7 @@
 import type { BlockContent, Blockquote, Paragraph, Parent, Root, Text } from 'mdast';
 import type { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
-import { PluginOptions } from '../../types/transform.js';
+import { PluginOptions } from '../../types/index.js';
 
 const searchGfmAlert = (props: {
   node: Blockquote;

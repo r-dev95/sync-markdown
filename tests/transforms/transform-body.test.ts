@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { expect, test } from 'vitest';
 import transformBody from '../../src/transforms/transform-body.js';
-import { Platform } from '../../src/types/transform.js';
+import { Platform } from '../../src/types/index.js';
 
 test('変換元と変換先のプラットフォーム指定が同じでエラーが投げられる', async () => {
   await expect(() => transformBody('', { from: 'zenn', to: 'zenn' })).rejects.toThrow(EvalError);
