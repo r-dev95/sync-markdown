@@ -21,6 +21,10 @@
     "test": "vitest",
     "coverage": "vitest run --coverage"
   },
+  "volta": {
+    "node": "24.16.0",
+    "npm": "11.16.0"
+  },
   "dependencies": {
     "commander": "^15.0.0",
     "gray-matter": "^4.0.3",
@@ -46,8 +50,7 @@
     "typescript-eslint": "^8.60.1",
     "vitest": "^4.1.8"
   },
-  "volta": {
-    "node": "24.16.0",
-    "npm": "11.16.0"
+  "allowScripts": {
+    "esbuild@0.28.1": true
   }
 }
